@@ -1,20 +1,24 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-const FirstApp = ({title , subtitle}) => {
-
+const FirstApp = ({ title = "Default titlte", subtitle }) => {
   return (
     <>
-      <h1>{ title }</h1>
-      <p>{ subtitle }</p>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
     </>
-  )
-
-}
+  );
+};
 
 // PropTypes
 FirstApp.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired
-}
+  subtitle: PropTypes.string.isRequired,
+};
 
-export default FirstApp
+// Default Props
+// FirstApp.defaultProps = {
+//   title: "Default title",
+//   subtitle: "Default subtitle",
+// };
+
+export default FirstApp;

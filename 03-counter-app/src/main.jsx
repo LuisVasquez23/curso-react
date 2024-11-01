@@ -9,6 +9,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     {/* <HelloWorldApp /> */}
     {/* <FirstApp title="Soy un titulo" subtitle='Soy un subitutlo'  /> */}
-    <CounterApp counter={10} />
+    <CounterApp value={0} />
   </StrictMode>
 );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getGifs } from "../helpers/getGifs";
 
 const GifGrid = ({ category }) => {
   const [gifs, setGifs] = useState([]);

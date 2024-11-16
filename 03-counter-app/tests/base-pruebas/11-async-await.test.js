@@ -5,4 +5,9 @@ describe("Prueba con async-await", () => {
     const url = await getImagen();
     expect(typeof url).toBe("string");
   });
+
+  test("GetImagen debe retornar error si no obtenemos la imagen", async () => {
+    const url = await getImagen();
+    expect(url).toBe("No se encontró la imagen");
+  });
 });

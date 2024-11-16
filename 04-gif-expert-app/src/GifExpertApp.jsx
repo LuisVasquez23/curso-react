@@ -4,18 +4,19 @@ import AddCategory from "./components/AddCategory";
 const GifExpertApp = () => {
   const [categories, setCategories] = useState(["One Punch"]);
 
-  const handleAdd = () => {
-    setCategories([...categories, "HunterXHunter"]);
+  const handleAdd = (newCategory) => {
+    setCategories([...categories, newCategory]);
   };
 
   return (
     <>
+      {/* Title */}
       <h1>GifExpertApp</h1>
-      {/* input */}
-      <AddCategory />
+
+      {/* Componente AddCategory */}
+      <AddCategory setCategories={handleAdd} />
 
       {/* Listado de Gifs */}
-      <button onClick={handleAdd}>Agregar</button>
       <ol>
         {categories.map((category) => {
           return <li key={category}>{category}</li>;

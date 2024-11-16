@@ -2,10 +2,10 @@ import { useState } from "react";
 import AddCategory from "./components/AddCategory";
 
 const GifExpertApp = () => {
-  const [categories, setCategories] = useState(["One Punch"]);
+  const [categories, setCategories] = useState([]);
 
-  const handleAdd = (newCategory) => {
-    setCategories([...categories, newCategory]);
+  const handleNewCategory = (newCategory) => {
+    setCategories([newCategory, ...categories]);
   };
 
   return (
@@ -14,7 +14,7 @@ const GifExpertApp = () => {
       <h1>GifExpertApp</h1>
 
       {/* Componente AddCategory */}
-      <AddCategory setCategories={handleAdd} />
+      <AddCategory onNewCategory={handleNewCategory} />
 
       {/* Listado de Gifs */}
       <ol>

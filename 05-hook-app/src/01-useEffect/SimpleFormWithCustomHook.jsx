@@ -1,26 +1,11 @@
-import { useEffect, useState } from "react";
-import Message from "./Message";
+import useForm from "../hooks/useForm";
 
 const SimpleFormWiithCustomHook = () => {
-  const [formState, setFormState] = useState({
-    username: "123",
-    email: "luis@gmail.com",
+  const { onInputChange, username, email, password } = useForm({
+    username: "",
+    email: "",
+    password: "",
   });
-
-  const { username, email } = formState;
-
-  const onInputChange = ({ target }) => {
-    const { value, name } = target;
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
-
-  useEffect(() => {
-    console.log("formState changed");
-  }, [formState]);
 
   return (
     <>
@@ -45,7 +30,14 @@ const SimpleFormWiithCustomHook = () => {
         onChange={onInputChange}
       />
 
-      {username === "123" && <Message />}
+      <input
+        type="password"
+        className="form-control mt-2"
+        placeholder="contraseña"
+        name="password"
+        value={password}
+        onChange={onInputChange}
+      />
     </>
   );
 };

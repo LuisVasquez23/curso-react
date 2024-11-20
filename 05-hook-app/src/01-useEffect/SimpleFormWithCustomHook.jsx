@@ -1,7 +1,7 @@
 import useForm from "../hooks/useForm";
 
 const SimpleFormWiithCustomHook = () => {
-  const { onInputChange, username, email, password } = useForm({
+  const { onInputChange, username, email, password, onResetForm } = useForm({
     username: "",
     email: "",
     password: "",
@@ -24,7 +24,7 @@ const SimpleFormWiithCustomHook = () => {
       <input
         type="email"
         className="form-control mt-2"
-        placeholder="luis@gmail.com"
+        placeholder="Email"
         name="email"
         value={email}
         onChange={onInputChange}
@@ -38,6 +38,10 @@ const SimpleFormWiithCustomHook = () => {
         value={password}
         onChange={onInputChange}
       />
+
+      <button className="btn btn-primary mt-2" onClick={onResetForm}>
+        Reset
+      </button>
     </>
   );
 };

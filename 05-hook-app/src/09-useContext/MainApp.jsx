@@ -1,7 +1,8 @@
-import { Link, Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
 import LoginPage from "./LoginPage";
+import Navbar from "./Navbar";
 
 const MainApp = () => {
   return (
@@ -9,9 +10,7 @@ const MainApp = () => {
       <h1>Main App</h1>
 
       {/* Navbar */}
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/login">Login</Link>
+      <Navbar />
 
       <hr />
       <Routes>
